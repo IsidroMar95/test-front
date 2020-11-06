@@ -1,6 +1,6 @@
 <template>
   <footer class="text-gray-700 body-font">
-    <div class="container flex flex-col items-center px-5 py-8 mx-auto sm:flex-row">
+    <div class="container flex flex-col items-center px-5 py-6 mx-auto sm:flex-row">
       <p class="mt-4 text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:py-2 sm:mt-0">
         © 2020 IsidroM —
         <a href="https://twitter.com/IsidroMar95" class="ml-1 text-gray-600" rel="noopener noreferrer" target="_blank">@isidromar95</a>

@@ -2,7 +2,7 @@
   <div class="flex items-center my-3">
     <div class="flex flex-col items-start breadcrumbs">
       <h3 class="mt-1 text-2xl font-medium leading-tight text-gray-900">
-        Galeria
+        Galeria de imagenes
       </h3>
     </div>
   </div>
