@@ -1,0 +1,9 @@
+.tweakOpacity-enter-active,
+.tweakOpacity-leave-active {
+  transition: opacity .20s ease-out;
+}
+
+.tweakOpacity-enter,
+.tweakOpacity-leave-active {
+  opacity: 0;
+}

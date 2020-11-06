@@ -1,0 +1,16 @@
+.sidebar-link {
+  @apply font-medium flex items-center justify-between px-3 py-2 -mx-3 text-sm rounded-sm font-medium text-gray-900;
+}
+
+.nuxt-link-exact-active  {
+  @apply bg-gray-200 text-yellow-900;
+}
+
+
+.sidebar-link_active:hover {
+  @apply bg-gray-200 text-yellow-900;
+}
+
+.icon-sidebar {
+  @apply w-6 h-6 text-gray-500;
+}
