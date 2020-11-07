@@ -41,7 +41,6 @@
               </button>
             </header>
           </div>
-
           <section class="modal-body">
             <slot name="modal-body">
               <!--                        I'm the default body!-->

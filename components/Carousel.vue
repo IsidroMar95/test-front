@@ -4,7 +4,7 @@
       <img src="@/static/images/empty-state.gif" alt="animation" class="mx-auto">
     </div>
     <template v-else>
-      <Modal :is-open="isModalVisible" siz="lg" :title="infoModal.name" :description="infoModal.description" @close="isModalVisible = false">
+      <Modal :is-open="isModalVisible" siz="lg" :title="infoModal.name" @close="isModalVisible = false">
         <template v-slot:modal-body>
           <div class="w-64 h-64 mx-auto bg-center bg-cover" :style="bgImage(infoModal.file)" />
         </template>

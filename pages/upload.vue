@@ -75,6 +75,7 @@ export default {
       const time = `${today.getHours()}${today.getMinutes()}${today.getSeconds()}`
 
       const reader = new FileReader()
+      reader.readAsDataURL(this.file)
       reader.onloadend = () => {
         const base64String = reader.result.replace('data:', '').replace(/^.+,/, '')
         const data = {
@@ -85,8 +86,13 @@ export default {
         }
         localStorage.setItem(`${date}${time}`, JSON.stringify(data))
       }
-      reader.readAsDataURL(this.file)
+
       this.isModalVisible = true
+      setTimeout(() => {
+        this.clearForm()
+      }, 200)
+    },
+    clearForm () {
       this.file = null
       this.imageName = ''
       this.imageDescription = ''
