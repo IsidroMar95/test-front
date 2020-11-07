@@ -35,7 +35,7 @@
             <input id="files" type="file" accept="image/x-png,image/jpeg" class="hidden" @change="inputImage">
           </div>
         </div>
-        <button v-if="isDataFull" class="self-end px-5 py-3 mt-5 font-medium leading-5 text-white transition-colors duration-150 bg-yellow-600 border border-transparent rounded-lg active:bg-yellow-600 hover:bg-yellow-700 focus:outline-none">
+        <button class="self-end px-5 py-3 mt-5 font-medium leading-5 text-white transition-colors duration-150 bg-yellow-600 border border-transparent rounded-lg active:bg-yellow-600 hover:bg-yellow-700 focus:outline-none">
           Guardar imagen
         </button>
       </form>
@@ -52,8 +52,7 @@ export default {
       file: {},
       image: {},
       dateTime: '',
-      isModalVisible: false,
-      isDataFull: false
+      isModalVisible: false
     }
   },
   methods: {
