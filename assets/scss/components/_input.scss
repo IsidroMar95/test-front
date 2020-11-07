@@ -1,0 +1,18 @@
+.textarea-custom,
+.input-custom {
+  @apply block w-full px-4 py-2 text-gray-700 border border-gray-200 rounded appearance-none leading-tight ;
+}
+
+.textarea-custom:focus,
+.input-custom:focus {
+  @apply border-yellow-400 shadow outline-none;
+}
+
+.checkbok-custom:focus,
+.radio-custom:focus {
+  @apply border-gray-500 shadow-md outline-none;
+}
+
+.radio-custom:hover{
+  cursor: pointer;
+}

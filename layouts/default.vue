@@ -3,16 +3,10 @@
     <TheNavbar />
     <div class="flex flex-1 overflow-hidden">
       <TheSidebar />
-      <div class="flex flex-col flex-auto">
+      <div class="flex flex-col flex-1">
         <main class="flex-1 overflow-y-scroll bg-gray-100">
-          <div class="flex overflow-auto">
-            <div class="flex-1 overflow-y-auto">
-              <div class="container flex-grow mx-auto mt-6 mb-10">
-                <div class="flex flex-col md:px-5">
-                  <nuxt />
-                </div>
-              </div>
-            </div>
+          <div class="container p-5 mx-auto">
+            <nuxt />
           </div>
         </main>
         <TheFooter />
