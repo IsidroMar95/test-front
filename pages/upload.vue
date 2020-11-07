@@ -6,14 +6,14 @@
         Subir imagen
       </h1>
       <form class="flex flex-col" @submit.prevent="storeImage">
-        <div class="flex flex-col my-5 md:flex-row md:space-x-8">
+        <div class="flex flex-col my-5 space-y-5 md:flex-row md:space-x-8">
           <label class="block md:w-1/2">
             <span class="text-gray-700">Nombre</span>
-            <input v-model="image.name" type="text" class="block w-full mt-1 form-input input-custom" placeholder="Rick & morty">
+            <input v-model="imageName" type="text" class="block w-full mt-1 form-input input-custom" placeholder="Rick & morty">
           </label>
           <label class="block md:w-1/2">
             <span class="text-gray-700">Descripción de la imagen</span>
-            <textarea v-model="image.description" class="block w-full mt-1 form-textarea textarea-custom" rows="3" placeholder="Alguna descripción..." />
+            <textarea v-model="imageDescription" class="block w-full mt-1 form-textarea textarea-custom" rows="3" placeholder="Alguna descripción..." />
           </label>
         </div>
         <div
@@ -29,13 +29,13 @@
           </svg>
           <div class="flex">
             <label for="files" class="text-yellow-700">
-              <span class="font-bold cursor-pointer hover:underline">{{ file.name ? file.name : 'busca tu imagen en tu ordenador' }}</span>
+              <span class="font-bold cursor-pointer hover:underline">{{ file ? file.name : 'busca tu imagen en tu ordenador' }}</span>
               <span>o arrastrala</span>
             </label>
             <input id="files" type="file" accept="image/x-png,image/jpeg" class="hidden" @change="inputImage">
           </div>
         </div>
-        <button class="self-end px-5 py-3 mt-5 font-medium leading-5 text-white transition-colors duration-150 bg-yellow-600 border border-transparent rounded-lg active:bg-yellow-600 hover:bg-yellow-700 focus:outline-none">
+        <button v-if="isDataFull" class="self-end px-5 py-3 mt-5 font-medium leading-5 text-white transition-colors duration-150 bg-yellow-600 border border-transparent rounded-lg active:bg-yellow-600 hover:bg-yellow-700 focus:outline-none">
           Guardar imagen
         </button>
       </form>
@@ -49,14 +49,19 @@ export default {
   data () {
     return {
       dragging: false,
-      file: {},
-      image: {},
+      file: null,
+      imageName: '',
+      imageDescription: '',
       dateTime: '',
       isModalVisible: false
     }
   },
+  computed: {
+    isDataFull () {
+      return this.file != null && this.imageName !== '' && this.imageDescription !== ''
+    }
+  },
   methods: {
-
     inputImage (event) {
       this.file = event.target.files[0]
     },
@@ -74,14 +79,17 @@ export default {
         const base64String = reader.result.replace('data:', '').replace(/^.+,/, '')
         const data = {
           id: `${date}${time}`,
-          name: this.image.name,
-          description: this.image.description,
+          name: this.imageName,
+          description: this.imageDescription,
           file: base64String
         }
         localStorage.setItem(`${date}${time}`, JSON.stringify(data))
       }
       reader.readAsDataURL(this.file)
       this.isModalVisible = true
+      this.file = null
+      this.imageName = ''
+      this.imageDescription = ''
     }
   }
 }
